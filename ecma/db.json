@@ -1,0 +1,76 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Viết báo cáo",
+      "desc": "Báo cáo tuần 1",
+      "status": "todo"
+    },
+    {
+      "id": 2,
+      "title": "Thiết kế UI",
+      "desc": "Trang đăng nhập",
+      "status": "todo"
+    },
+    {
+      "id": 3,
+      "title": "Cài đặt API",
+      "desc": "Kết nối JSON server",
+      "status": "inProgress"
+    },
+    {
+      "id": 4,
+      "title": "Viết test",
+      "desc": "Unit test cho utils",
+      "status": "inProgress"
+    },
+    {
+      "id": 5,
+      "title": "Deploy",
+      "desc": "Đẩy lên production",
+      "status": "done"
+    },
+    {
+      "id": 6,
+      "title": "Tối ưu performance",
+      "desc": "Kiểm tra re-render, dùng memo",
+      "status": "inProgress"
+    },
+    {
+      "id": 7,
+      "title": "Refactor code",
+      "desc": "Tách component nhỏ hơn",
+      "status": "todo"
+    },
+    {
+      "id": 8,
+      "title": "Tạo tài liệu README",
+      "desc": "Hướng dẫn chạy project",
+      "status": "todo"
+    },
+    {
+      "id": 9,
+      "title": "Kiểm thử UI",
+      "desc": "Test trên mobile và tablet",
+      "status": "inProgress"
+    },
+    {
+      "id": 10,
+      "title": "Fix bug login",
+      "desc": "Không nhận token",
+      "status": "done"
+    },
+    {
+      "id": 11,
+      "title": "Tạo animation",
+      "desc": "Hiệu ứng chuyển trang",
+      "status": "todo"
+    },
+    {
+      "id": 12,
+      "title": "Backup dữ liệu",
+      "desc": "Xuất JSON định kỳ",
+      "status": "done"
+    }
+  ]
+}
