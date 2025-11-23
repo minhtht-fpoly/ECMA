@@ -7,7 +7,6 @@ import Register from "./pages/Register";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/LogIn";
 import KanbanComponent from "./pages/List";
-import Test from "./components/Test";
 
 function App() {
   return (

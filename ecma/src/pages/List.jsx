@@ -26,6 +26,18 @@ export default function KanbanComponent() {
   const todo = tasks.filter((task) => task.status == "todo");
   const done = tasks.filter((task) => task.status == "done");
   const inProgress = tasks.filter((task) => task.status == "inProgress");
+  const handleDelete = (id) => {
+    if (window.confirm("Bạn có chắc chắn muốn xóa nhiemej vụ này không")) {
+      fetch(`http://localhost:3000/tasks/${id}`, { method: "DELETE" })
+        .then((res) => {
+          alert("Xóa nhiệm vụ thành công");
+          setTasks((preTasks) => preTasks.filter((task) => task.id !== id));
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-6\">
       <div className="max-w-6xl mx-auto">
@@ -39,18 +51,21 @@ export default function KanbanComponent() {
             mauSac={"red"}
             tasks={todo}
             shade={"500"}
+            onDelete={handleDelete}
           />
           <KanbanCollum
             title="Đang thực hiện"
             mauSac={"blue"}
             tasks={inProgress}
             shade={"600"}
+            onDelete={handleDelete}
           />
           <KanbanCollum
             title="Đã hoàn thiện"
             mauSac={"green"}
             tasks={done}
             shade={"600"}
+            onDelete={handleDelete}
           />
         </div>
       </div>
