@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/LogIn";
 import KanbanComponent from "./pages/List";
+import AddTask from "./pages/Add";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/add" element={<AddTask></AddTask>}></Route>
         <Route
           path="/kanban"
           element={<KanbanComponent></KanbanComponent>}
