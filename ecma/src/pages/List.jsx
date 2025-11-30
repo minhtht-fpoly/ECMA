@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function TodoTableStatic() {
   const [tasks, setTasks] = useState([]);
@@ -9,6 +10,7 @@ export default function TodoTableStatic() {
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);
+  const navigate = useNavigate();
   const handleDelete = (id) => {
     fetch(`http://localhost:3000/tasks/${id}`, { method: "DELETE" }).then(
       () => {
@@ -71,7 +73,13 @@ export default function TodoTableStatic() {
                 {/* ACTIONS */}
                 <td className="p-3">
                   <div className="flex justify-center gap-4">
-                    <button className="text-blue-600 hover:text-blue-800 transition">
+                    <button
+                      className="text-blue-600 hover:text-blue-800 transition"
+                      onClick={() => {
+                        //Chuyển sang trang Edit, gửi kèm param là id của task cần sửa
+                        navigate(`/edit/${task.id}`);
+                      }}
+                    >
                       <Pencil size={18} />
                     </button>
                     <button

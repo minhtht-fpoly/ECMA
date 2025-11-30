@@ -2,10 +2,10 @@
   "tasks": [
     {
       "id": "12",
-      "title": "Backup dữ liệu",
-      "desc": "Xuất JSON định kỳ",
-      "status": "done",
-      "priority": "low"
+      "title": "Backup dữ liệu 123456789",
+      "desc": "Xuất JSON định kỳ 123456789",
+      "status": "inProgress",
+      "priority": "high"
     },
     {
       "id": "6495",
@@ -13,6 +13,20 @@
       "desc": "Học rhf",
       "status": "inProgress",
       "priority": "high"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$jZoyyP7blT9qUFkL7g5Bku3YjIPSRv4xREoKaAXwkm2BuylE9zaie",
+      "title": "admin@gmail.com",
+      "desc": "12345678",
+      "id": 1
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$h83GGzBdH52KLI8Hfq3D/u8VZshGCDrlqykfwv45oKUOQx1q1H/cC",
+      "id": 2
     }
   ]
 }
