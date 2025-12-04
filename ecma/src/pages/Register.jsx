@@ -1,13 +1,20 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 export default function FormRegisterUI() {
+  const schema = z.object({
+    email: z.string().email("Email không đúng định dang"),
+    password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
+  });
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: zodResolver(schema) });
   const navigate = useNavigate();
+
   const onValid = (data) => {
     axios.post("http://localhost:3000/register", data).then(() => {
       alert("Đăng ký tài khoản thành công");
@@ -30,12 +37,12 @@ export default function FormRegisterUI() {
       <div className="mb-4">
         <label className="block font-medium mb-1 text-gray-700">Email</label>
         <input
-          type="email"
+          type="text"
           className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
           placeholder="Nhập tiêu đề..."
           {...register("email", { required: "Không được bỏ trống email" })}
         />
-        {errors.title && <p style={{ color: "red" }}>{errors.title.message}</p>}
+        {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
       </div>
 
       {/* DESC */}
@@ -49,6 +56,9 @@ export default function FormRegisterUI() {
             required: "Không được bỏ trống mật khẩu",
           })}
         ></input>
+        {errors.password && (
+          <div style={{ color: "red" }}>{errors.password.message}</div>
+        )}
       </div>
 
       {/* STATUS + PRIORITY GROUP */}

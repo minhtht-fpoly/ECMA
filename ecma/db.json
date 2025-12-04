@@ -27,6 +27,11 @@
       "email": "admin1@gmail.com",
       "password": "$2a$10$h83GGzBdH52KLI8Hfq3D/u8VZshGCDrlqykfwv45oKUOQx1q1H/cC",
       "id": 2
+    },
+    {
+      "email": "tienminh@gmail.com",
+      "password": "$2a$10$WZ38T3NeM6EsMhK8Y.XtxOtLEvYKcBFlg2U2u5HDGlxYRLeyXA3Re",
+      "id": 3
     }
   ]
 }
